@@ -128,8 +128,8 @@
   align-items: center;
   margin: .5rem;
   padding: .5rem;
-  height: 6rem;
-  width: 12rem;
+  height: 8rem;
+  width: 10rem;
   background: #F9FAFB;
   border: 1px solid transparent;
   transition: .5s all;
@@ -202,35 +202,7 @@
   color: #555;
 }
 
-/* ========== TECH STACK SECTION ========== */
-.tech-stack {
-  padding: 80px 0;
-  background-color: #fff;
-  text-align: center;
-}
 
-.tech-stack h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-.tech-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.tech-icons img {
-  width: 50px;
-  transition: transform 0.3s ease;
-}
-
-.tech-icons img:hover {
-  transform: scale(1.1);
-}
 
 /* ========== PORTFOLIO SECTION ========== */
 .portfolio {
