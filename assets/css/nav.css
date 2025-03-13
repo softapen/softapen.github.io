@@ -1,0 +1,142 @@
+nav {
+  display: flex;
+  width: 100%;
+  background: #89b8f76b;
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  padding: .8rem 2rem;
+  z-index: 999;
+}
+
+nav .logo {
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logo>img {
+  max-width: 100px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin: 0 .5rem;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--primary);
+  background: #fff;
+}
+
+.contact {
+  background-color: var(--second-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+nav .menu-btn i {
+  color: var(--primary);
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+
+  #click:checked~.menu-btn i:before {
+    content: "\f00d";
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #ffffff71;
+    backdrop-filter: blur(10px);
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  #click:checked~ul {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  #click:checked~ul li a {
+    margin-left: 0px;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: #fff;
+    color: var(--second-color);
+  }
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #fff;
+}
+
+.content div {
+  font-size: 40px;
+  font-weight: 700;
+}
