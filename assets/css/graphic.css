@@ -1,0 +1,215 @@
+ /* Basic Reset & Box Sizing */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf8ff;
+  color: #333;
+  overflow-x: hidden; /* Avoid horizontal scroll on smaller screens */
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+a, button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Container Utility (renamed) */
+.graphic-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3em 0;
+}
+
+/* Fade-in Animation (renamed) */
+@keyframes fadeInUpGraphic {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== HERO SECTION (renamed) ========== */
+.graphic-hero {
+  background: linear-gradient(135deg, #ff88f7, #9c5ef1);
+  color: #fff;
+  padding: 4em 0;
+  text-align: center;
+  animation: fadeInUpGraphic 1s ease forwards;
+}
+.graphic-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+.graphic-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+}
+.graphic-hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #9c5ef1;
+  padding: 0.75em 2em;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.graphic-hero-btn:hover {
+  background: #fdf8ff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* ========== CREATIVE SOLUTIONS SECTION (renamed) ========== */
+.graphic-creative {
+  animation: fadeInUpGraphic 1s ease forwards;
+  animation-delay: 0.2s;
+}
+.graphic-creative h2 {
+  margin-bottom: 1em;
+}
+.graphic-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+.graphic-solution-card {
+  background: linear-gradient(135deg, #ff88f7, #9c5ef1);
+  padding: 2em;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.graphic-solution-card:hover {
+  transform: translateY(-5px);
+}
+.graphic-solution-card h3 {
+  margin-bottom: 0.5em;
+}
+
+/* ========== RECENT PROJECTS SECTION (renamed) ========== */
+.graphic-projects {
+  animation: fadeInUpGraphic 1s ease forwards;
+  animation-delay: 0.4s;
+}
+.graphic-projects h2 {
+  margin-bottom: 1em;
+}
+.graphic-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+.graphic-project-box {
+  background: #fff;
+  border: 2px dashed #ff88f7;
+  border-radius: 8px;
+  height: 200px; /* Just for placeholder visuals */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9c5ef1;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
+}
+.graphic-project-box:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* ========== HOW WE CREATE SECTION (renamed) ========== */
+.graphic-process {
+  animation: fadeInUpGraphic 1s ease forwards;
+  animation-delay: 0.6s;
+}
+.graphic-process h2 {
+  margin-bottom: 1em;
+}
+.graphic-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+.graphic-step-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.graphic-step-card:hover {
+  transform: translateY(-5px);
+}
+.graphic-step-card h3 {
+  margin-bottom: 0.5em;
+}
+
+/* ========== CTA SECTION (renamed) ========== */
+.graphic-cta {
+  background: linear-gradient(135deg, #ff88f7, #9c5ef1);
+  color: #fff;
+  text-align: center;
+  padding: 3em 1em;
+  animation: fadeInUpGraphic 1s ease forwards;
+  animation-delay: 0.8s;
+  border-radius: 8px;
+  margin-bottom: 3em;
+}
+.graphic-cta h2 {
+  margin-bottom: 0.5em;
+}
+.graphic-cta p {
+  margin-bottom: 1.5em;
+}
+.graphic-cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #9c5ef1;
+  padding: 0.75em 2em;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.graphic-cta-btn:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .graphic-hero h1 {
+    font-size: 2rem;
+  }
+  .graphic-hero p {
+    font-size: 1rem;
+  }
+}

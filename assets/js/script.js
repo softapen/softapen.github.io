@@ -54,3 +54,61 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+// marketing-page-js
+// Intersection Observer for fade-in animations
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in-up");
+
+  const appearOptions = {
+    threshold: 0.15, // how much of the element is in view
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+
+  // Stat counters
+  const statValues = document.querySelectorAll(".stat-value");
+  const speed = 10; // lower = faster
+
+  const animateCounter = (el) => {
+    const target = +el.getAttribute("data-target");
+    let count = 0;
+
+    const updateCount = () => {
+      if (count < target) {
+        count += 1; // increment
+        el.innerText = count + (target > 24 ? "+" : "");
+        setTimeout(updateCount, speed);
+      } else {
+        el.innerText = target + (target > 24 ? "+" : "");
+      }
+    };
+    updateCount();
+  };
+
+  // Trigger counters once stats-row is visible
+  const statsRow = document.querySelector(".stats-row");
+  const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      statValues.forEach((stat) => animateCounter(stat));
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+
+  if (statsRow) {
+    statsObserver.observe(statsRow);
+  }
+});
