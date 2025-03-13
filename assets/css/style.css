@@ -14,7 +14,7 @@
   /* Soft gradient background from left to right */
   background: linear-gradient(180deg, #f8faff2f, #eaf2ff);
   padding: 4rem 2rem;
-  font-family: Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   height: auto;
 }
 
@@ -105,7 +105,8 @@
 .hero-img {
   max-width: 100%;
   border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+  filter: drop-shadow(0px 0px 12px #000);
 }
 
 /* ===== RESPONSIVE (TABLET & MOBILE) ===== */
@@ -141,11 +142,10 @@
   background-color: #f9fafc;
   /* Light background */
   padding: 4rem 2rem;
-  /* Spacing around the section */
-  font-family: Arial, sans-serif;
+  /* Spacing around the section *
   text-align: center;
   /* Center the heading & subtitle */
-
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .services-container {
@@ -272,7 +272,7 @@
   padding: 4rem 2rem;
   text-align: center;
   /* Center the heading & subtitle */
-  font-family: Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .projects-container {
@@ -398,7 +398,7 @@
   background-color: #f9fafc;
   /* Light background */
   padding: 4rem 2rem;
-  font-family: Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   text-align: center;
 }
 
@@ -645,4 +645,3 @@
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
 }
-

@@ -1,3 +1,9 @@
+* {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 /* Container Utility */
 .container {
   width: 90%;
@@ -19,10 +25,26 @@
 
 /* ========== HERO SECTION ========== */
 .hero {
-  background: linear-gradient(135deg, #2979ff, #1565c0);
+  background: linear-gradient(135deg, #E0F2FE, #55c2f5);
+  /* background: url('../images/developbg.png'); */
   color: #fff;
   padding: 80px 0;
+  height: 80svh;
+  display: flex;
+  justify-content: center;
 
+}
+
+.development-heading {
+  color: #020817 !important;
+  font-size: 3rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.devt {
+  background-image: linear-gradient(45deg, #0EA2E5, #046BA3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-container {
@@ -38,7 +60,6 @@
 }
 
 .hero-text h1 {
-  font-size: 3rem;
   margin-bottom: 20px;
 }
 
@@ -49,13 +70,14 @@
 
 .btn {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 5px 10px;
   background-color: #fff;
   color: #1565c0;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 30px;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 .btn:hover {
@@ -71,60 +93,69 @@
   max-width: 500px;
 }
 
-/* ========== SERVICES SECTION ========== */
-.services {
-  padding: 80px 0;
-  background-color: #fff;
-  text-align: center;
+/* ========= technology -============== */
+.technology {
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.services h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffffff;
+.tech-head {
+  color: #0EA2E5;
+  font-size: 34px;
+  margin-bottom: .5rem;
 }
 
-.services p {
-  font-size: 1rem;
-  margin-bottom: 40px;
-  color: #ffffff;
+.tech-sub-head {
+  margin-bottom: .5rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+.tech-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 1200px;
+  justify-content: center;
 }
 
-.service-card {
-  background: #f9f9f9;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
+.t-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 6px;
+  align-items: center;
+  margin: .5rem;
+  padding: .5rem;
+  height: 6rem;
+  width: 12rem;
+  background: #F9FAFB;
+  border: 1px solid transparent;
+  transition: .5s all;
+  text-transform: capitalize;
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
+  &:hover {
+    transition: .5s all;
+    border: 1px solid #0EA2E5;
+  }
 
-.card-icon {
-  margin-bottom: 20px;
-}
 
-.card-icon img {
-  width: 60px;
-}
+  & h4 {
+    color: #222;
+    margin-top: .5rem;
+  }
 
-.service-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.service-card p {
-  font-size: 1rem;
-  color: #666;
+  & i {
+    background: #E1F2F9;
+    height: 40px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #29AFEB;
+  }
 }
 
 /* ========== PROCESS SECTION ========== */

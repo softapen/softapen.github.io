@@ -41,7 +41,7 @@ nav ul li a {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   margin: 0.5rem;
-  font-family: popins;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 nav ul li a.active,
