@@ -1,8 +1,7 @@
 nav {
   display: flex;
   width: 100%;
-  background: transparent;
-  backdrop-filter: blur(10px);
+  background: white;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -10,7 +9,7 @@ nav {
   margin: 0 auto;
   position: sticky;
   top: 0;
-  padding: .8rem 2rem;
+  padding: .1rem 18rem;
   z-index: 999;
 }
 
@@ -29,6 +28,7 @@ nav ul {
   flex-wrap: wrap;
   list-style: none;
   align-items: center;
+  padding: .5rem;
 }
 
 nav ul li a {
@@ -76,6 +76,10 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 920px) {
+  nav {
+    height: 3rem;
+  }
+
   nav .menu-btn i {
     display: block;
   }
@@ -86,10 +90,9 @@ input[type="checkbox"] {
 
   nav ul {
     position: fixed;
-    top: 80px;
+    top: 47px;
     left: -100%;
-    background: #ffffff71;
-    backdrop-filter: blur(10px);
+    background: #ffffff;
     height: 60vh;
     width: 100%;
     text-align: center;
