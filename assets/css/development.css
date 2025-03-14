@@ -208,7 +208,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(21, 101, 192, 0.9);
+  background: rgba(120, 146, 175, 0.13);
+  backdrop-filter: blur(20px);
   color: #fff;
   padding: 20px;
   transform: translateY(100%);
@@ -226,6 +227,7 @@
 
 .portfolio-info p {
   font-size: 0.9rem;
+  color: #E6F6FD;
 }
 
 /* Development Services */
@@ -526,4 +528,59 @@
     width: 100%;
     margin-bottom: 40px;
   }
+}
+
+
+
+.cta-dev {
+  gap: 5rem;
+  width: 100%;
+  padding: 3rem;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  background: #00aeff;
+  justify-content: center;
+  color: #F9FAFB;
+  flex-wrap: wrap;
+}
+
+.cta-dev-text {
+  max-width: 400px;
+}
+
+.cta-right-content>ol>li {
+  list-style-type: none;
+}
+
+.cta-heading {
+  font-size: 34px;
+}
+
+.cta-dev-text {
+  color: #e6f5ff;
+  margin-top: 20px;
+}
+
+.cta-button-dev {
+  padding: 10px 20px;
+  border: none;
+  background: #f0f0f0;
+  width: max-content;
+  border-radius: 6px;
+  color: #0EA2E5;
+  margin-top: 20px;
+}
+
+.cta-right-content {
+  border: 2px solid #ffffff;
+  padding: 3rem;
+  border-radius: 6px;
+  background: #d5ecff15;
+  backdrop-filter: blur(20px);
+}
+
+
+.cta-right-heading {
+  margin-bottom: 1rem;
 }
