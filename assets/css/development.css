@@ -1,7 +1,5 @@
 * {
-  font-family: "Space Grotesk", sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Oswald';
 }
 
 /* Container Utility */
@@ -23,16 +21,14 @@
   transform: translateY(0);
 }
 
-/* ========== HERO SECTION ========== */
-.hero {
+/* ========== dev SECTION ========== */
+.dev {
   background: linear-gradient(135deg, #E0F2FE, #55c2f5);
-  /* background: url('../images/developbg.png'); */
-  color: #fff;
+  color: #020817;
   padding: 80px 0;
-  height: 80svh;
+  height: min-content;
   display: flex;
   justify-content: center;
-
 }
 
 .development-heading {
@@ -47,35 +43,36 @@
   -webkit-text-fill-color: transparent;
 }
 
-.hero-container {
+.dev-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 10rem;
 }
 
-.hero-text {
-  flex: 1 1 500px;
+.dev-text {
+  flex: 0 1 500px;
 }
 
-.hero-text h1 {
+.dev-text h1 {
   margin-bottom: 20px;
 }
 
-.hero-text p {
+.dev-text p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
 .btn {
   display: inline-block;
-  padding: 5px 10px;
-  background-color: #fff;
-  color: #1565c0;
+  padding: 10px 10px;
+  background-color: #0EA5E9;
+  color: #E0F2FE;
+  font-family: sans-serif;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
   font-size: 16px;
 }
@@ -84,22 +81,23 @@
   background-color: #f0f0f0;
 }
 
-.hero-image {
+.dev-image {
   flex: 1 1 400px;
 }
 
-.hero-image img {
+.dev-image img {
   width: 100%;
   max-width: 500px;
 }
 
 /* ========= technology -============== */
 .technology {
-  margin: 5rem 0;
   display: flex;
+  border-radius: 6px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5rem 0;
 }
 
 .tech-head {
@@ -109,7 +107,9 @@
 }
 
 .tech-sub-head {
-  margin-bottom: .5rem;
+  margin: .5rem;
+  text-align: center;
+  padding: .5rem;
 }
 
 .tech-boxes {
@@ -158,49 +158,6 @@
   }
 }
 
-/* ========== PROCESS SECTION ========== */
-.process {
-  padding: 80px 0;
-  background-color: #f5f7fa;
-  text-align: center;
-}
-
-.process h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #222;
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-.step {
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.step-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2979ff;
-  margin-bottom: 10px;
-}
-
-.step h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.step p {
-  font-size: 1rem;
-  color: #555;
-}
 
 
 
@@ -271,14 +228,177 @@
   font-size: 0.9rem;
 }
 
-/* ========== Responsive ========== */
+/* Development Services */
+.dev-services {
+  padding: 5rem 0;
+  background-color: #F9FAFB;
+
+}
+
+.brif {
+  background: #E1F2F9;
+  color: #0EA5E9;
+  padding: .3rem 2rem;
+  border-radius: 12px;
+  text-transform: capitalize;
+  margin-bottom: .5rem;
+}
+
+.up-dev {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: .5rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ser-head {
+  font-size: 40px;
+  margin-bottom: .5rem;
+}
+
+.ser-sub-head {
+  color: #4B5563;
+  width: 80%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+/* donw side devlopment section =================== */
+.development-services-main-container-unique {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.development-services-grid-unique {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Responsive for tablets & smaller screens */
+@media (max-width: 1024px) {
+  .development-services-grid-unique {
+    grid-template-columns: 1fr;
+    /* Single column layout */
+  }
+}
+
+/* Responsive for mobile devices */
 @media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
+  .development-services-grid-unique {
+    grid-template-columns: 1fr;
+    /* Single column layout */
+    gap: 15px;
   }
 
-  .hero-image {
-    margin-top: 30px;
+  .development-service-box-unique {
+    padding: 15px;
+  }
+}
+
+/* Service Box */
+.development-service-box-unique {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  padding-top: 50px;
+  /* Extra top padding for the icon */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.development-service-box-unique:hover {
+  transform: translateY(-5px);
+  /* Subtle hover effect */
+}
+
+/* Icon */
+.development-service-icon-unique {
+  border-radius: 4px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 34px;
+  background-color: #E6F6FD;
+  color: #0EA5E9;
+  padding: .5rem;
+  margin-bottom: 2rem;
+}
+
+/* Title */
+.development-service-box-title-unique {
+  font-size: 1.5rem;
+  font-family: 'Oswald', sans-serif;
+  margin: 1.5rem 0;
+}
+
+/* List */
+.development-service-box-list-unique {
+  list-style: none;
+  padding-left: 0;
+}
+
+.development-service-box-list-item-unique {
+  margin: 5px 0;
+  font-weight: 900;
+}
+
+/* Buttons */
+.development-service-button-unique {
+  margin-top: 15px;
+  background: #0EA5E9;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.development-service-button-unique:hover {
+  background: #0056b3;
+}
+
+/* Bullet Point Styles */
+#dots {
+  font-size: 14px;
+  margin: 0 1rem;
+  color: #0EA2E5;
+  filter: drop-shadow(0px 0px 12px #00aeff);
+}
+
+.dev-s-t {
+  text-decoration: none;
+}
+
+.dev-s-t2 {
+  list-style: none;
+  color: #646464;
+  font-weight: 500;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#dots-hide {
+  opacity: 0;
+  margin: 0 1rem;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (max-width: 640px) {
+  .dev-image {
+    display: none;
   }
 }
