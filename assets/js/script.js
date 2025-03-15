@@ -112,3 +112,65 @@ document.addEventListener("DOMContentLoaded", () => {
     statsObserver.observe(statsRow);
   }
 });
+
+
+// graphic page code 
+
+// Wait for DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+  /* ==============================
+     FADE-IN ON SCROLL
+  ============================== */
+  const faders = document.querySelectorAll(".fade-in-up");
+  const appearOptions = { threshold: 0.15 };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+
+  /* ==============================
+     TESTIMONIAL AUTO-SLIDER
+  ============================== */
+  const slider = document.getElementById("graphic-page-testimonial-slider");
+  if (slider) {
+    let index = 0;
+    const slides = slider.querySelectorAll(".graphic-page-testimonial-card");
+
+    // Duplicate first slide to the end for a seamless loop (optional)
+    // Or we can simply cycle the transform
+    setInterval(() => {
+      index++;
+      if (index >= slides.length) {
+        index = 0;
+      }
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000); // 4-second interval
+  }
+
+  /* ==============================
+     FAQ ACCORDION
+  ============================== */
+  const faqItems = document.querySelectorAll(".graphic-page-faq-item");
+
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector(".graphic-page-faq-question");
+    questionBtn.addEventListener("click", () => {
+      // Close other open items
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
+      // Toggle current item
+      item.classList.toggle("active");
+    });
+  });
+});

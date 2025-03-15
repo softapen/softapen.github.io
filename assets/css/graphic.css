@@ -1,244 +1,218 @@
- /* Basic Reset & Box Sizing */
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
 
- html {
-   scroll-behavior: smooth;
- }
 
- body {
-   font-family: "Space Grotesk", sans-serif;
-   background-color: #fdf8ff;
-   color: #333;
-   overflow-x: hidden;
-   /* Avoid horizontal scroll on smaller screens */
- }
+/* GRAPHIC  HERO  SECTION  */
 
- h1,
- h2,
- h3 {
-   font-weight: 700;
-   margin-bottom: 0.5em;
-   text-align: center;
- }
+.grahic-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  height: 75svh;
+  gap: 5rem;
+  padding: 5rem 0;
+  background-color: #FDE2F3;
+}
 
- p {
-   font-weight: 300;
-   line-height: 1.6;
-   margin-bottom: 1em;
-   text-align: center;
- }
 
- a,
- button {
-   text-decoration: none;
-   cursor: pointer;
- }
+.graphic-hero-left {
+  margin: 2rem;
+  width: 30%;
+}
 
- /* Container Utility (renamed) */
- .graphic-container {
-   width: 90%;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 3em 0;
- }
 
- /* Fade-in Animation (renamed) */
- @keyframes fadeInUpGraphic {
-   0% {
-     opacity: 0;
-     transform: translateY(30px);
-   }
+.graphic-brif {
+  color: #DB50F0;
+  background-color: #F9D2F2;
+  width: max-content;
+  padding: 6px 16px;
+  margin: 0 0 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: sans-serif;
+}
 
-   100% {
-     opacity: 1;
-     transform: translateY(0);
-   }
- }
+.graphic-hero-head {
+  padding: .3rem;
+  font-size: 48px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
 
- /* ========== HERO SECTION (renamed) ========== */
- .graphic-hero {
-   background: linear-gradient(135deg, #ff88f7, #9c5ef1);
-   color: #fff;
-   padding: 4em 0;
-   text-align: center;
-   animation: fadeInUpGraphic 1s ease forwards;
- }
+.graphic-col {
+  background-image: linear-gradient(45deg, #D342E8, #A31DB1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
- .graphic-hero h1 {
-   font-size: 2.5rem;
-   margin-bottom: 0.5em;
- }
+.graphic-text {
+  color: #4B5563;
+  width: 90%;
+  padding: .3rem;
+  margin: 0 0 16px;
+  font-size: 18px;
+}
 
- .graphic-hero p {
-   font-size: 1.1rem;
-   margin-bottom: 1.5em;
- }
+.graphic-btns {
+  padding: .3rem;
+  display: flex;
+  flex-direction: row;
+  gap: .9rem;
+}
 
- .graphic-hero-btn {
-   display: inline-block;
-   background: #fff;
-   color: #9c5ef1;
-   padding: 0.75em 2em;
-   border-radius: 30px;
-   font-weight: 600;
-   transition: all 0.3s ease;
- }
+.graphic-btn,
+.graphic-btn-two {
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+}
 
- .graphic-hero-btn:hover {
-   background: #fdf8ff;
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-   transform: translateY(-2px);
- }
 
- /* ========== CREATIVE SOLUTIONS SECTION (renamed) ========== */
- .graphic-creative {
-   animation: fadeInUpGraphic 1s ease forwards;
-   animation-delay: 0.2s;
- }
+.graphic-btn {
+  background: #D946EF;
+  color: #fff;
+  transition: background .5s;
+}
 
- .graphic-creative h2 {
-   margin-bottom: 1em;
- }
+.graphic-btn:hover {
+  color: #D946EF;
+  background: #F9FAFB;
+}
 
- .graphic-solutions-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 2em;
-   margin-top: 2em;
- }
+.graphic-btn-two {
+  background: #F9FAFB;
+  color: #4B5563;
+  transition: background .5s;
+}
 
- .graphic-solution-card {
-   background: linear-gradient(135deg, #ff88f7, #9c5ef1);
-   padding: 2em;
-   border-radius: 8px;
-   color: #fff;
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-   transition: transform 0.3s ease;
- }
+.graphic-btn-two:hover {
+  background: #7a2786;
+  color: #F9FAFB;
+}
 
- .graphic-solution-card:hover {
-   transform: translateY(-5px);
- }
+.graphic-hero-right>img {
+  height: 500px;
+  filter: drop-shadow(0px 0px 12px #0000004b);
+}
 
- .graphic-solution-card h3 {
-   margin-bottom: 0.5em;
- }
 
- /* ========== RECENT PROJECTS SECTION (renamed) ========== */
- .graphic-projects {
-   animation: fadeInUpGraphic 1s ease forwards;
-   animation-delay: 0.4s;
- }
 
- .graphic-projects h2 {
-   margin-bottom: 1em;
- }
+/* DESING SERVICES SECTION */
 
- .graphic-projects-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-   gap: 1.5em;
-   margin-top: 2em;
- }
 
- .graphic-project-box {
-   background: #fff;
-   border: 2px dashed #ff88f7;
-   border-radius: 8px;
-   height: 200px;
-   /* Just for placeholder visuals */
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: #9c5ef1;
-   font-weight: 600;
-   transition: box-shadow 0.3s ease;
- }
+.desing-services-section {
+  margin: 0 312px;
+  padding: 32px;
+}
 
- .graphic-project-box:hover {
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
- }
+.design-ser-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
- /* ========== HOW WE CREATE SECTION (renamed) ========== */
- .graphic-process {
-   animation: fadeInUpGraphic 1s ease forwards;
-   animation-delay: 0.6s;
- }
+.desing-ser-head {
+  padding: .3rem;
+  font-size: 38px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
 
- .graphic-process h2 {
-   margin-bottom: 1em;
- }
+.design-ser-text {
+  color: #4B5563;
+  width: 70%;
+  padding: .3rem;
+  margin: 0 0 32px;
+  font-size: 17px;
+  text-align: center;
+}
 
- .graphic-steps-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 2em;
-   margin-top: 2em;
- }
 
- .graphic-step-card {
-   background: #fff;
-   border-radius: 8px;
-   padding: 2em;
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-   text-align: center;
-   transition: transform 0.3s ease;
- }
+.design-ser-box {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
- .graphic-step-card:hover {
-   transform: translateY(-5px);
- }
+.des-ser-box {
+  max-width: 550px;
+  margin: .5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(25deg, #e81aff, #b71ccf);
+}
 
- .graphic-step-card h3 {
-   margin-bottom: 0.5em;
- }
 
- /* ========== CTA SECTION (renamed) ========== */
- .graphic-cta {
-   background: linear-gradient(135deg, #ff88f7, #9c5ef1);
-   color: #fff;
-   text-align: center;
-   padding: 3em 1em;
-   animation: fadeInUpGraphic 1s ease forwards;
-   animation-delay: 0.8s;
-   border-radius: 8px;
-   margin-bottom: 3em;
- }
+.des-ser-box>i {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  color: #FEF9FE;
+  background: #d987e4c5;
+  padding: .6rem;
+  border-radius: 6px;
+}
 
- .graphic-cta h2 {
-   margin-bottom: 0.5em;
- }
+.des-ser-box>h3,
+.des-ser-box>p {
+  color: #FEF9FE;
+}
 
- .graphic-cta p {
-   margin-bottom: 1.5em;
- }
 
- .graphic-cta-btn {
-   display: inline-block;
-   background: #fff;
-   color: #9c5ef1;
-   padding: 0.75em 2em;
-   border-radius: 30px;
-   font-weight: 600;
-   transition: all 0.3s ease;
- }
+/* OUR PORTFOLIO SECTION */
+.desPortfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
- .graphic-cta-btn:hover {
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-   transform: translateY(-2px);
- }
+.desPortTop {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
- /* ========== MEDIA QUERIES ========== */
- @media (max-width: 768px) {
-   .graphic-hero h1 {
-     font-size: 2rem;
-   }
+.portHead {
+  padding: .3rem;
+  font-size: 38px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
 
-   .graphic-hero p {
-     font-size: 1rem;
-   }
- }
+
+.porText {
+  color: #4B5563;
+  width: 70%;
+  padding: .3rem;
+  margin: 0 0 32px;
+  font-size: 17px;
+  text-align: center;
+}
+
+
+
+
+.desMinBox {
+  width: 300px;
+  margin: 1rem;
+  height: 300px;
+  display: flex;
+  padding: .5rem;
+  border-radius: 6px;
+  justify-content: end;
+  flex-direction: column;
+  align-items: flex-start;
+  background: url('../images/developbg.png');
+}
