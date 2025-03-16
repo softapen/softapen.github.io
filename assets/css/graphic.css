@@ -173,6 +173,7 @@
 .desPortfolio {
   max-width: 1200px;
   margin: 0 auto;
+
 }
 
 .desPortTop {
@@ -181,6 +182,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .portHead {
@@ -189,6 +191,7 @@
   font-family: var(--font-family);
   font-weight: 700;
   margin: 0 0 12px;
+  text-align: center;
 }
 
 
@@ -201,18 +204,468 @@
   text-align: center;
 }
 
+/* grid boxes */
+/* ==============================
+   GRID CONTAINER
+============================== */
+.graphic-page-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem;
+  justify-content: center;
+}
+
+/* ==============================
+   GRID ITEMS
+============================== */
+.graphic-page-grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 250px;
+  /* Fixed height for consistency */
+}
+
+.graphic-page-grid-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure image fills the box */
+.graphic-page-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==============================
+   OVERLAY (HIDDEN BY DEFAULT)
+============================== */
+.graphic-page-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(162, 0, 255, 0.7);
+  color: #fff;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+/* Slide overlay up on hover */
+.graphic-page-grid-item:hover .graphic-page-overlay {
+  transform: translateY(0);
+}
+
+.graphic-page-overlay h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.graphic-page-overlay p {
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  .graphic-page-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .graphic-page-grid-container {
+    grid-template-columns: 1fr;
+    margin: 2rem;
+
+  }
+}
 
 
+/* Design process */
 
-.desMinBox {
-  width: 300px;
-  margin: 1rem;
-  height: 300px;
+.desProc {
+  margin: 3rem auto;
+  background-color: #FDF6FE;
+  padding: 2rem 0;
+}
+
+.desProcTop {
   display: flex;
-  padding: .5rem;
-  border-radius: 6px;
-  justify-content: end;
   flex-direction: column;
-  align-items: flex-start;
-  background: url('../images/developbg.png');
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.procHead {
+  padding: .3rem;
+  font-size: 38px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.desSubHead {
+  color: #4B5563;
+  width: 70%;
+  padding: .3rem;
+  margin: 0 0 32px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.desProcDow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.box {
+  padding: 1em;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #cbd4e2;
+  text-align: center;
+  min-height: 200px;
+  max-width: 300px;
+}
+
+.box>i {
+  font-size: 22px;
+  background: #FBECFD;
+  color: #D946EF;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: .5rem;
+}
+
+.box>h1 {
+  margin-bottom: .5rem;
+}
+
+
+/* CTA Section Wrapper */
+.grap-cta-sec {
+  background: #d120cf;
+  /* Vibrant pink/purple hue */
+  text-align: center;
+  padding: 80px 20px;
+  /* Adjust spacing as needed */
+}
+
+/* Container to center content and limit max width */
+.grap-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Main Heading */
+.grap-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Subtext */
+.grap-cta-subtext {
+  font-size: 1rem;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  /* Center and space below */
+  line-height: 1.5;
+}
+
+/* CTA Button */
+.grap-cta-button {
+  display: inline-block;
+  background: #fff;
+  color: #d120cf;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+.grap-cta-button:hover {
+  background: #f9e4f5;
+  /* Slightly tinted background on hover */
+  color: #a90ca6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grap-cta-title {
+    font-size: 1.6rem;
+  }
+
+  .grap-cta-subtext {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+/* ================================
+         RESPONSIVE STYLE
+================================ */
+
+
+
+
+
+/* =======================================
+   MEDIA QUERIES FOR RESPONSIVENESS
+======================================= */
+
+/* Larger Tablets & Small Desktops (max-width: 992px) */
+@media (max-width: 992px) {
+
+  /* HERO Section */
+  .grahic-hero {
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: auto;
+    /* Let content define height */
+    padding: 3rem 1rem;
+  }
+
+  .graphic-hero-left {
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  .graphic-hero-right>img {
+    height: 400px;
+    width: auto;
+  }
+
+  /* DESIGN SERVICES */
+  .desing-services-section {
+    margin: 0 100px;
+    padding: 2rem 1rem;
+  }
+
+  .design-ser-text {
+    width: 80%;
+  }
+
+  .des-ser-box {
+    max-width: 400px;
+    /* Narrower boxes */
+  }
+
+  /* PORTFOLIO GRID */
+  .graphic-page-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem;
+
+  }
+
+  /* DESIGN PROCESS */
+  .desProcDow {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .box {
+    max-width: 250px;
+    margin: 0.5rem;
+  }
+}
+
+/* Tablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+
+  /* HERO Section */
+  .grahic-hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .graphic-hero-left {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .graphic-hero-head {
+    font-size: 36px;
+  }
+
+  .graphic-text {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .graphic-btn,
+  .graphic-btn-two {
+    font-size: 14px;
+  }
+
+  .graphic-hero-right>img {
+    height: 300px;
+    width: auto;
+  }
+
+  /* DESIGN SERVICES */
+  .desing-services-section {
+    margin: 0 50px;
+  }
+
+  .des-ser-box {
+    margin: 1rem auto;
+    max-width: 350px;
+  }
+
+  /* PORTFOLIO GRID */
+  .graphic-page-grid-container {
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns */
+    margin: 2rem;
+
+  }
+
+  .graphic-page-grid-item {
+    height: 200px;
+  }
+
+  /* DESIGN PROCESS */
+  .desProc {
+    padding: 1rem 0;
+  }
+
+  .desProcDow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    max-width: 300px;
+    margin: 1rem 0;
+  }
+
+  /* CTA */
+  .grap-cta-sec {
+    padding: 60px 20px;
+  }
+
+  .grap-cta-title {
+    font-size: 1.4rem;
+  }
+
+  .grap-cta-subtext {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+
+  /* HERO Section */
+  .grahic-hero {
+    padding: 2rem 1rem;
+  }
+
+  .graphic-hero-left {
+    width: 90%;
+  }
+
+  .graphic-hero-head {
+    font-size: 28px;
+  }
+
+  .graphic-text {
+    font-size: 14px;
+  }
+
+  .graphic-btn,
+  .graphic-btn-two {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .graphic-hero-right>img {
+    height: 250px;
+  }
+
+  /* DESIGN SERVICES */
+  .desing-services-section {
+    margin: 0 20px;
+    padding: 1rem;
+  }
+
+  .design-ser-text {
+    width: 100%;
+  }
+
+  .des-ser-box {
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem;
+  }
+
+  /* PORTFOLIO GRID */
+  .graphic-page-grid-container {
+    grid-template-columns: 1fr;
+    /* 1 column */
+    gap: 1rem;
+    margin: 2rem;
+
+  }
+
+  .graphic-page-grid-item {
+    height: 180px;
+  }
+
+  /* DESIGN PROCESS */
+  .desProc {
+    padding: 1rem 0;
+  }
+
+  .box {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  /* CTA */
+  .grap-cta-sec {
+    padding: 40px 10px;
+  }
+
+  .grap-cta-title {
+    font-size: 1.2rem;
+  }
+
+  .grap-cta-subtext {
+    font-size: 0.85rem;
+  }
+
+  .grap-cta-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }
