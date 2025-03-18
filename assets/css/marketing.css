@@ -10,9 +10,11 @@
   /* Very light greenish background */
   --text-color: #333;
   --heading-color: #222;
-  --font-primary: 'Poppins', sans-serif;
+  --font-primary: "Inter", sans-serif;
 }
-
+* {
+  font-family: "Inter", sans-serif;
+}
 /* Utility: Container */
 .container {
   width: 90%;
@@ -21,28 +23,41 @@
 }
 
 /* ==============================
-   HERO SECTION
+   marketing SECTION
 ============================== */
-.hero-section {
+
+.marketing-brif {
+  background-color: #00ff00;
+  width: max-content;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+.marketing-section {
   position: relative;
   background: linear-gradient(135deg, #e5fbe6, #f7fff7);
   padding: 4rem 0 6rem 0;
-  /* Extra bottom padding for wave shape */
+  height: 70svh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-bg-shape {
+.marketing-bg-shape {
   position: absolute;
   top: 0;
   right: 0;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle at center, #c3f0ce 0%, transparent 70%);
+  background: radial-gradient(circle at center, #b5f0c4 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
 
-.hero-content {
+.marketing-content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -51,45 +66,78 @@
   flex-wrap: wrap;
 }
 
-.hero-text {
+.marketing-text {
   flex: 1 1 500px;
   margin-right: 2rem;
 }
 
-.hero-text h1 {
+.marketing-text h1 {
   font-size: 2.5rem;
   color: var(--heading-color);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
-.hero-subtitle {
+.marketing-subtitle {
   font-size: 1.1rem;
   color: #555;
   max-width: 500px;
 }
 
-.hero-graphic {
+.marketing-markiting {
   flex: 1 1 400px;
   text-align: center;
 }
 
-.hero-graphic img {
+.marketing-hero-image img {
   width: 100%;
-  max-width: 450px;
+  min-height: 30rem;
+  max-width: 900px;
   display: block;
   margin: 0 auto;
 }
 
+.mark-high {
+  background-image: linear-gradient(25deg, #00ff00, #14ac00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marketing-btn {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mark-btns {
+  padding: 0.9rem 1rem;
+  border: none;
+  background-color: #22c55e;
+  border-radius: 6px;
+  color: #f0fff2;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.mark-btns-2 {
+  padding: 0.9rem 1rem;
+  border: none;
+  background-color: #abf0c4;
+  border-radius: 6px;
+  color: #203523;
+  font-weight: 700;
+  font-size: 15px;
+}
 /* Stats Row */
 .stats-row {
   display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
-  background-color: #fff;
+  justify-content: center;
+  background-color: #fbfffa;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 12px #00000018;
+  margin: 1rem auto;
+  max-width: 900px;
 }
 
 .stat-box {
@@ -109,122 +157,256 @@
   color: #666;
 }
 
-/* ==============================
-   SERVICES SECTION
-============================== */
-.services-section {
-  background-color: #fff;
-  padding: 4rem 0;
+/* MARKETING markS SECTION */
+
+.marketing-marks-section {
+  margin: 1rem 312px;
+  padding: 32px;
+}
+
+.marketing-marks-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketing-headline {
+  padding: 0.3rem;
+  font-size: 38px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.marketing-description {
+  color: #4b5563;
+  width: 70%;
+  padding: 0.3rem;
+  margin: 0 0 32px;
+  font-size: 17px;
   text-align: center;
 }
 
-.services-section h2 {
-  font-size: 2rem;
-  color: var(--heading-color);
-  margin-bottom: 0.5rem;
+.mark-card-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.section-subtitle {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.service-card {
-  background-color: #f9fef9;
-  border-radius: 12px;
+.mark-card {
+  max-width: 550px;
+  margin: 0.5rem;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  background: linear-gradient(25deg, #fcfffc, #f5f5f5);
+  box-shadow: 0px 0px 6px #0000001a;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
+.mark-card > i {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  color: #fef9fe;
+  background: #22c55e;
+  padding: 0.6rem;
+  border-radius: 6px;
 }
 
-.service-icon img {
-  width: 60px;
+.mark-card > h3 {
+  color: #000;
+}
+
+.mark-card > p {
+  color: #999;
+}
+/* Global Styles */
+
+/* Client Success Section */
+.client-success {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Success Tag */
+.success-tag {
+  background: #d1f7d1;
+  color: #047857;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  width: max-content;
   margin-bottom: 1rem;
 }
 
-.service-card h3 {
-  font-size: 1.3rem;
-  color: var(--heading-color);
-  margin-bottom: 0.75rem;
+/* Heading and Subtext */
+.success-heading {
+  font-size: 28px;
+  color: #111827;
+  font-weight: 700;
+  margin: 10px 0;
 }
 
-.service-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
+.success-subtext {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 30px;
 }
 
-/* ==============================
-   RESULTS SECTION
-============================== */
-.results-section {
-  background: linear-gradient(135deg, #f0fff2, #ffffff);
-  padding: 4rem 0;
+/* Stats Boxes */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.stats-box {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.results-section h2 {
-  font-size: 2rem;
-  color: var(--heading-color);
-  margin-bottom: 0.5rem;
+.stats-icon {
+  background: #e5f6e5;
+  color: #047857;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
 }
 
-.results-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+.stats-box h3 {
+  color: #16a34a;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 10px 0;
 }
 
-.result-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease;
+.stats-box p {
+  color: #4b5563;
+  font-size: 14px;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.stats-type {
+  font-size: 13px;
+  color: #6b7280;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Testimonial Box */
+.testimonial-box {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.stars {
+  font-size: 20px;
+  color: #fbbf24;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  color: #111827;
+  margin: 15px 0;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
   text-align: left;
 }
 
-.result-card:hover {
-  transform: translateY(-5px);
+.author-icon {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.result-title {
-  font-size: 1.2rem;
+.testimonial-author h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.testimonial-author span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* CTA Button */
+.cta-button {
+  background: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--main-green);
-  margin-bottom: 0.5rem;
+  margin: 20px auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
 }
 
-.result-text {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.4;
+.cta-button:hover {
+  background: #0d8a36;
 }
 
-.result-author {
-  font-size: 0.85rem;
-  color: #888;
-  font-style: italic;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ==============================
    CTA SECTION
 ============================== */
 .cta-section {
-  background: linear-gradient(135deg, var(--main-green), var(--main-green-light));
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-light)
+  );
   color: #fff;
   padding: 4rem 0;
   text-align: center;
@@ -272,26 +454,26 @@
   transform: translateY(0);
 }
 
-/* Intersection Observer fade-in (hero h1, etc.) */
+/* Intersection Observer fade-in (marketing h1, etc.) */
 .fade-in-up,
-.hero-subtitle,
+.marketing-subtitle,
 .stats-row {
   will-change: opacity, transform;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .hero-content {
+  .marketing-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-text {
+  .marketing-text {
     margin-right: 0;
     margin-bottom: 2rem;
   }
 
-  .hero-graphic img {
+  .marketing-markiting img {
     max-width: 300px;
   }
 
@@ -302,8 +484,7 @@
 }
 
 @media (max-width: 768px) {
-
-  .services-grid,
+  .marks-grid,
   .results-cards {
     grid-template-columns: 1fr;
   }
@@ -318,5 +499,153 @@
 @media (max-width: 480px) {
   .stats-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------------------------
+main responsive 
+-------------------------------------------------------------------------------------------- */
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .marketing-section {
+    height: 50svh;
+  }
+  .marketing-content {
+    flex-direction: column;
+    gap: none;
+  }
+  .marketing-hero-image {
+    display: none;
+  }
+  .success-tag {
+    margin: 1rem auto;
+  }
+
+  .marketing-text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  .marketing-marks-section {
+    margin: 1rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketing-headline {
+    text-align: center;
+  }
+  .marketing-marks-section {
+    padding: 0.5rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .marketing-section {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .marketing-text h1 {
+    font-size: 2rem;
+  }
+
+  .marketing-subtitle {
+    font-size: 1rem;
+  }
+
+  .marketing-btn {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mark-btns,
+  .mark-btns-2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 350px;
+  }
+
+  .mark-card {
+    max-width: 80%;
+    padding: 1.5rem;
+  }
+
+  .testimonial-box {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .marketing-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .marketing-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .marketing-markiting img {
+    max-width: 250px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-box {
+    padding: 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .marketing-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .marketing-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .stats-box {
+    width: 100%;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .mark-card {
+    padding: 1rem;
   }
 }
