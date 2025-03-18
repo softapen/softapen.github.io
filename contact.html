@@ -16,14 +16,6 @@
   <link rel="stylesheet" href="assets/css/contact.css">
 
 
-  <!-- BOOTS STRAP -->
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous"
-  />
-
   <!-- cnd css  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -33,16 +25,16 @@
 
 
     <!-- JAVASCRIPT FOR THE CONTACT  -->
-    <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("J01QMSmqj93QY8gmJ");
-    })();
-  </script>
-
-  
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "N8qPkWHPHAOVmfM3J",
+  });
+})();
+</script>
   <!-- title -->
   <title>SoftaPen</title>
 </head>
@@ -69,44 +61,33 @@
     </ul>
   </nav>
   <!-- MAIN SECTION GOES FORM HERE  -->
-  <!-- HERO SECTION (No header) -->
-  <section class="contact-hero">
-    <div class="contact-container">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you. Let’s connect and explore how we can help!</p>
-      <a href="#contact-form" class="contact-btn">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM SECTION -->
-  <section class="contact-form-section" id="contact-form">
-    <div class="contact-container">
-      <h2>Get in Touch</h2>
-      <p>Fill out the form below and our team will get back to you as soon as possible.</p>
-
-      <form class="contact-form">
-        <div class="contact-form-group">
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <div class="contact-box">
+      <form id="form">
+        <h2>Contact Us</h2>
+        <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Enter your name" required>
+          <input type="text" name="name" id="name" placeholder="Enter your name" required>
         </div>
-        <div class="contact-form-group">
+        <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
+          <input type="email" name="email" id="email" placeholder="Enter your email" required>
         </div>
-        <div class="contact-form-group">
-          <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" placeholder="Enter your phone number">
-        </div>
-        <div class="contact-form-group">
+        <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+          <textarea name="message" id="message" rows="4" placeholder="Type your message here..." required></textarea>
         </div>
-        <button type="submit" class="contact-btn">Send Message</button>
+        <input type="submit" id="button" value="Send Message">
       </form>
     </div>
-  </section>
-
-
+  
+    <!-- Google Map -->
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.2102998211135!2d90.3939238821651!3d23.81111974208925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c6dfea3f8a71%3A0x938cf5207fa554b2!2sVasantek%20Bazar!5e0!3m2!1sen!2sbd!4v1742335661138!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  
 
 
   <!-- Footer Section  -->
@@ -177,8 +158,43 @@
 
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/contact.js"></script>
+  <!-- <script src="assets/js/contact.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- EmailJS Script -->
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  emailjs.init('N8qPkWHPHAOVmfM3J'); // Make sure your Public Key is correct
+
+  const btn = document.getElementById('button');
+  const form = document.getElementById('form');
+
+  if (!btn) {
+    console.error("Button element not found! Check your HTML.");
+    return;
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents form refresh
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_nc18v46';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Send Email';
+        alert('Email sent successfully!');
+      }, (err) => {
+        btn.value = 'Send Email';
+        alert('Failed to send email. Error: ' + JSON.stringify(err));
+      });
+  });
+});
+</script>
 
 </body>
 
