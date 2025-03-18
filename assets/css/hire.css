@@ -2,9 +2,9 @@
    GLOBAL STYLES & VARIABLES
 =============================== */
 :root {
-  --primary-color: #f9b03c; /* Main brand color */
-  --primary-dark: #e29d2f; /* Darker shade for hover states */
-  --accent-color: #ffe8c7; /* Light accent */
+  --primary-color: #f9b03c;
+  --primary-dark: #e29d2f;
+  --light-bg: #fff8ef;
   --text-color: #333;
   --heading-color: #222;
   --white: #fff;
@@ -12,9 +12,11 @@
   --radius: 8px;
   --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   --max-width: 1200px;
-  --hire-dot-color: #ffe7c0; /* for dotted background in hire */
+  --bg-grey: #fafafa;
 }
-
+* {
+  font-family: var(--font-family);
+}
 *,
 *::before,
 *::after {
@@ -38,18 +40,17 @@ body {
   padding: 3rem 0;
 }
 
-/* ============================
-         BUTTONS
-=============================== */
+/* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75em 2em;
-  border-radius: 30px;
+  padding: 0.75em 1.5em;
+  border-radius: 8px; /* Keep between 6-12px as requested */
   font-weight: 600;
   text-align: center;
   transition: background-color var(--transition), box-shadow var(--transition),
     transform var(--transition);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -76,189 +77,299 @@ body {
   color: var(--white);
 }
 
+.btn-custom-quote {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
+.btn-custom-quote:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
 /* ============================
-         hire SECTION
+         HERO SECTION
 =============================== */
-.hire {
-  position: relative;
-  overflow: hidden;
-  background-color: #fff;
+.hero-section {
+  background-color: var(--light-bg);
   padding: 4rem 0;
 }
 
-/* Dotted pattern on the right side */
-.hire-bg-pattern {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: var(--accent-color);
-  background-image: radial-gradient(var(--hire-dot-color) 1px, transparent 1px);
-  background-size: 16px 16px;
-  background-position: 0 0;
-  z-index: 1;
-}
-
-.hire-content {
-  position: relative;
+.hero-layout {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  z-index: 2;
 }
 
-.hire-text {
+/* Left side text aligned left */
+.hero-text {
   flex: 1 1 50%;
+  text-align: left;
 }
 
-.hire-text h1 {
-  font-size: 2.8rem;
+.hero-label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.25em 0.75em;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
 
-.hire-text p {
+.hero-text h1 span {
+  color: var(--primary-color);
+}
+
+.hero-text p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   color: #555;
 }
 
-.hire-image {
+.hero-image {
   flex: 1 1 50%;
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
-.hire-image img {
+.hero-image img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 /* ============================
-      BENEFITS SECTION
+     BENEFITS SECTION
 =============================== */
-.benefits {
+.benefits-section {
+  background-color: #fff;
+}
+
+.benefits-top {
   text-align: center;
-  padding: 4rem 0;
+  margin-bottom: 3rem;
 }
 
-.benefits h2 {
+.benefits-label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.25em 0.75em;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.benefits-top h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
   color: var(--heading-color);
+  margin-bottom: 0.5rem;
 }
 
+.benefits-subheading {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Benefits Grid */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* Default: 1 column */
 }
 
-.benefit-card {
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr); /* Medium: 2 columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr); /* Large: 3 columns */
+  }
+}
+
+.benefit-box {
   background-color: var(--white);
   border: 1px solid #f2f2f2;
   border-radius: var(--radius);
   padding: 2rem;
+  text-align: center;
   box-shadow: var(--shadow);
   transition: transform var(--transition);
-  text-align: left;
 }
 
-.benefit-card:hover {
+.benefit-box:hover {
   transform: translateY(-3px);
 }
 
-.benefit-icon {
-  font-size: 1.8rem;
+.benefit-box i {
+  font-size: 1.6rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
-.benefit-card h3 {
-  font-size: 1.3rem;
+.benefit-box h3 {
+  font-size: 1.2rem;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 /* ============================
-   HIRE EXPERTS SECTION
+       PRICING SECTION
 =============================== */
-.hire {
+.pricing-section {
+  background-color: var(--bg-grey);
+}
+
+.pricing-header {
   text-align: center;
-}
-
-.hire h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: var(--heading-color);
-}
-
-.hire p {
-  font-size: 1.1rem;
   margin-bottom: 2rem;
+}
+
+.pricing-label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.25em 0.75em;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pricing-header h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-subheading {
+  font-size: 1rem;
   color: #555;
 }
 
-.hire-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 2rem;
+/* Category Tabs */
+.pricing-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.hire-card {
+.tab-btn {
+  border: 2px solid var(--primary-color);
   background-color: #fff;
-  border: 1px solid #f2f2f2;
+  color: var(--primary-color);
+  padding: 0.6em 1.2em;
   border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition);
-  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
 }
 
-.hire-card:hover {
+.tab-btn i {
+  margin-right: 0.4rem;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.tab-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: left;
+  width: 300px;
+  transition: transform var(--transition);
+}
+
+.price-card:hover {
   transform: translateY(-3px);
 }
 
-.hire-card h3 {
-  font-size: 1.3rem;
+.price-card h3 {
+  margin-bottom: 0.5rem;
   color: var(--heading-color);
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
-.price {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 0.25em 0.75em;
-  border-radius: 20px;
-  margin-bottom: 1rem;
+.price-amount {
+  font-size: 1.8rem;
   font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.hire-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.hire-card li {
-  margin-bottom: 0.5rem;
+.price-description {
   font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.price-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.price-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Pricing CTA */
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pricing-cta p {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1rem;
 }
 
 /* ============================
-   HOW IT WORKS SECTION
+       HOW IT WORKS
 =============================== */
-.how {
-  text-align: center;
-  padding: 4rem 0;
+.how-section {
+  background-color: #fff;
 }
 
-.how h2 {
+.how-section h2 {
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: var(--heading-color);
@@ -266,21 +377,20 @@ body {
 
 .how-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
 
-.step {
+.step-card {
   background-color: var(--white);
   border: 1px solid #f2f2f2;
   border-radius: var(--radius);
-  padding: 2rem;
   box-shadow: var(--shadow);
+  padding: 2rem;
   transition: transform var(--transition);
-  text-align: left;
 }
 
-.step:hover {
+.step-card:hover {
   transform: translateY(-3px);
 }
 
@@ -288,46 +398,42 @@ body {
   width: 40px;
   height: 40px;
   background-color: var(--primary-color);
-  color: var(--white);
+  color: #fff;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
   font-weight: 700;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 /* ============================
-         CTA SECTION
+        SCROLL ANIMATION
 =============================== */
-.cta-section {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-dark)
-  );
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1rem;
-  border-radius: var(--radius);
-  margin-top: 3rem;
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.cta-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.animate-on-scroll.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================
         RESPONSIVENESS
 =============================== */
-@media (max-width: 1024px) {
-  .hire-text h1 {
-    font-size: 2.4rem;
+@media (max-width: 992px) {
+  .hero-layout {
+    flex-direction: column;
+  }
+  .hero-image {
+    margin-top: 2rem;
+  }
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -335,34 +441,61 @@ body {
   .container {
     padding: 2rem 1rem;
   }
-
-  .hire-content {
-    flex-direction: column;
-    text-align: center;
+  .hero-section {
+    padding: 3rem 1rem;
   }
-
-  .hire-image {
-    margin-top: 2rem;
+  .hero-text h1 {
+    font-size: 2rem;
   }
-
-  .benefit-card,
-  .hire-card,
-  .step {
-    text-align: center;
+  .benefits-top h2 {
+    font-size: 1.8rem;
+  }
+  .pricing-header h2,
+  .how-section h2 {
+    font-size: 1.8rem;
+  }
+  .price-card {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @media (max-width: 480px) {
-  .hire-text h1 {
-    font-size: 2rem;
+  .hero-text h1 {
+    font-size: 1.8rem;
   }
-
+  .hero-text p {
+    font-size: 1rem;
+  }
   .btn {
-    padding: 0.6em 1.5em;
+    padding: 0.6em 1em;
     font-size: 0.9rem;
   }
+  .price-card {
+    max-width: 100%;
+  }
+}
 
-  .price {
-    font-size: 0.85rem;
+/* ============================
+   Pricing Cards Animation
+=============================== */
+.price-fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.price-fade-in {
+  animation: priceFadeIn 0.2s forwards;
+}
+
+@keyframes priceFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

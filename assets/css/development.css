@@ -1,5 +1,5 @@
 * {
-  font-family: 'Oswald';
+  font-family: var(--font-family);
 }
 
 /* Container Utility */
@@ -23,7 +23,7 @@
 
 /* ========== dev SECTION ========== */
 .dev {
-  background: linear-gradient(135deg, #E0F2FE, #55c2f5);
+  background: linear-gradient(135deg, #e0f2fe, #55c2f5);
   color: #020817;
   padding: 80px 0;
   height: min-content;
@@ -38,7 +38,7 @@
 }
 
 .devt {
-  background-image: linear-gradient(45deg, #0EA2E5, #046BA3);
+  background-image: linear-gradient(45deg, #0ea2e5, #046ba3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -67,8 +67,8 @@
 .btn {
   display: inline-block;
   padding: 10px 10px;
-  background-color: #0EA5E9;
-  color: #E0F2FE;
+  background-color: #0ea5e9;
+  color: #e0f2fe;
   font-family: sans-serif;
   text-decoration: none;
   font-weight: bold;
@@ -101,15 +101,15 @@
 }
 
 .tech-head {
-  color: #0EA2E5;
+  color: #0ea2e5;
   font-size: 34px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .tech-sub-head {
-  margin: .5rem;
+  margin: 0.5rem;
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .tech-boxes {
@@ -126,40 +126,36 @@
   justify-content: center;
   border-radius: 6px;
   align-items: center;
-  margin: .5rem;
-  padding: .5rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   height: 8rem;
   width: 10rem;
-  background: #F9FAFB;
+  background: #f9fafb;
   border: 1px solid transparent;
-  transition: .5s all;
+  transition: 0.5s all;
   text-transform: capitalize;
 
   &:hover {
-    transition: .5s all;
-    border: 1px solid #0EA2E5;
+    transition: 0.5s all;
+    border: 1px solid #0ea2e5;
   }
-
 
   & h4 {
     color: #222;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 
   & i {
-    background: #E1F2F9;
+    background: #e1f2f9;
     height: 40px;
     width: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    color: #29AFEB;
+    color: #29afeb;
   }
 }
-
-
-
 
 /* ========== PORTFOLIO SECTION ========== */
 .portfolio {
@@ -227,41 +223,40 @@
 
 .portfolio-info p {
   font-size: 0.9rem;
-  color: #E6F6FD;
+  color: #e6f6fd;
 }
 
 /* Development Services */
 .dev-services {
   padding: 5rem 0;
-  background-color: #F9FAFB;
-
+  background-color: #f9fafb;
 }
 
 .brif {
-  background: #E1F2F9;
-  color: #0EA5E9;
-  padding: .3rem 2rem;
+  background: #e1f2f9;
+  color: #0ea5e9;
+  padding: 0.3rem 2rem;
   border-radius: 12px;
   text-transform: capitalize;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .up-dev {
   display: flex;
   text-align: center;
   align-items: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   flex-direction: column;
   justify-content: center;
 }
 
 .ser-head {
   font-size: 40px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .ser-sub-head {
-  color: #4B5563;
+  color: #4b5563;
   width: 80%;
   margin: 0 auto;
   font-family: sans-serif;
@@ -331,16 +326,16 @@
   align-items: center;
   text-align: center;
   font-size: 34px;
-  background-color: #E6F6FD;
-  color: #0EA5E9;
-  padding: .5rem;
+  background-color: #e6f6fd;
+  color: #0ea5e9;
+  padding: 0.5rem;
   margin-bottom: 2rem;
 }
 
 /* Title */
 .development-service-box-title-unique {
   font-size: 1.5rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin: 1.5rem 0;
 }
 
@@ -358,7 +353,7 @@
 /* Buttons */
 .development-service-button-unique {
   margin-top: 15px;
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: white;
   border: none;
   padding: 10px;
@@ -377,7 +372,7 @@
 #dots {
   font-size: 14px;
   margin: 0 1rem;
-  color: #0EA2E5;
+  color: #0ea2e5;
   filter: drop-shadow(0px 0px 12px #00aeff);
 }
 
@@ -405,10 +400,6 @@
   }
 }
 
-
-
-
-
 /* =========how we work section ************** */
 /* Container for entire section */
 .how-we-work-wrapper {
@@ -421,8 +412,8 @@
 /* Small label at top: "Our Process" */
 .how-we-work-label {
   display: inline-block;
-  background: #E6F6FD;
-  color: #0EA5E9;
+  background: #e6f6fd;
+  color: #0ea5e9;
   padding: 6px 16px;
   border-radius: 50px;
   font-weight: 600;
@@ -485,8 +476,8 @@
 /* Step number circle (e.g., "01", "02", etc.) */
 .how-we-work-step-number {
   display: inline-block;
-  background: #E6F6FD;
-  color: #0EA5E9;
+  background: #e6f6fd;
+  color: #0ea5e9;
   font-weight: 600;
   border-radius: 50%;
   width: 40px;
@@ -530,8 +521,6 @@
   }
 }
 
-
-
 .cta-dev {
   gap: 5rem;
   width: 100%;
@@ -541,7 +530,7 @@
   align-items: center;
   background: #00aeff;
   justify-content: center;
-  color: #F9FAFB;
+  color: #f9fafb;
   flex-wrap: wrap;
 }
 
@@ -549,7 +538,7 @@
   max-width: 400px;
 }
 
-.cta-right-content>ol>li {
+.cta-right-content > ol > li {
   list-style-type: none;
 }
 
@@ -568,7 +557,7 @@
   background: #f0f0f0;
   width: max-content;
   border-radius: 6px;
-  color: #0EA2E5;
+  color: #0ea2e5;
   margin-top: 20px;
 }
 
@@ -579,7 +568,6 @@
   background: #d5ecff15;
   backdrop-filter: blur(20px);
 }
-
 
 .cta-right-heading {
   margin-bottom: 1rem;

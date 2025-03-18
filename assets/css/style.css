@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
-
 
 /* hero section ------------- */
 
@@ -21,7 +21,6 @@
   /* Soft gradient background from left to right */
   background: linear-gradient(180deg, #f8faff2f, #eaf2ff);
   padding: 4rem 2rem;
-  font-family: "Space Grotesk", sans-serif;
   height: auto;
 }
 
@@ -141,18 +140,10 @@
   }
 }
 
-
-
-
 /* ===== Services Section ===== */
 .services {
   background-color: #f9fafc;
-  /* Light background */
   padding: 4rem 2rem;
-  /* Spacing around the section *
-  text-align: center;
-  /* Center the heading & subtitle */
-  font-family: "Space Grotesk", sans-serif;
 }
 
 .services-container {
@@ -192,8 +183,6 @@
   max-height: 230px;
   max-width: 300px;
   /* Left-align card content */
-
-
 
   display: flex;
   flex-direction: column;
@@ -270,16 +259,12 @@
   }
 }
 
-
-
 /* ===== Featured Projects Section ===== */
 .featured-projects {
   background-color: #f9fafc;
   /* Light background */
   padding: 4rem 2rem;
   text-align: center;
-  /* Center the heading & subtitle */
-  font-family: "Space Grotesk", sans-serif;
 }
 
 .projects-container {
@@ -394,18 +379,13 @@
   }
 }
 
-
-
 /* testimonial's  ======================*/
-
-
 
 /* ===== Testimonials Section ===== */
 .testimonials {
   background-color: #f9fafc;
   /* Light background */
   padding: 4rem 2rem;
-  font-family: "Space Grotesk", sans-serif;
   text-align: center;
 }
 
@@ -419,7 +399,6 @@
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 0.5rem;
-
 }
 
 .testimonials-subtitle {
@@ -497,10 +476,7 @@
   }
 }
 
-
-
 /* ==========CTA-SECTION=========== */
-
 
 .cta {
   position: relative;
@@ -519,7 +495,11 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
   transform: rotate(45deg);
   opacity: 0.5;
 }
@@ -546,13 +526,13 @@
 
 .cta-button {
   display: inline-block;
-  background-color: #1E293B;
-  color: #FFF;
+  background-color: #1e293b;
+  color: #fff;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -577,16 +557,12 @@
   }
 }
 
-
-
 /* ==========FAQ SECTION ============ */
 .faq {
   background-color: #f9f9f9;
   padding: 60px 20px;
   text-align: center;
   margin: 2rem;
-
-
 }
 
 .faq-container {
@@ -646,8 +622,6 @@
 .faq-item.active .faq-answer {
   padding: 12px 15px;
 }
-
-
 
 .faq-item.active .faq-icon {
   transform: rotate(45deg);

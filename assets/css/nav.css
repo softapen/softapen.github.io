@@ -1,7 +1,9 @@
 nav {
   display: flex;
   width: 100%;
-  background: white;
+  background: #ffffff85;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -9,7 +11,7 @@ nav {
   margin: 0 auto;
   position: sticky;
   top: 0;
-  padding: .1rem 18rem;
+  padding: 0.1rem 18rem;
   z-index: 999;
 }
 
@@ -19,7 +21,7 @@ nav .logo {
   font-weight: 600;
 }
 
-.logo>img {
+.logo > img {
   max-width: 100px;
 }
 
@@ -28,7 +30,7 @@ nav ul {
   flex-wrap: wrap;
   list-style: none;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 nav ul li a {
@@ -84,7 +86,7 @@ input[type="checkbox"] {
     display: block;
   }
 
-  #click:checked~.menu-btn i:before {
+  #click:checked ~ .menu-btn i:before {
     content: "\f00d";
   }
 
@@ -100,7 +102,7 @@ input[type="checkbox"] {
     transition: all 0.3s ease;
   }
 
-  #click:checked~ul {
+  #click:checked ~ ul {
     left: 0;
   }
 
@@ -117,7 +119,7 @@ input[type="checkbox"] {
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  #click:checked~ul li a {
+  #click:checked ~ ul li a {
     margin-left: 0px;
   }
 
