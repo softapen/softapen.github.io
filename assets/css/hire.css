@@ -1,230 +1,368 @@
-/* BASIC RESET & BOX SIZING */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ============================
+   GLOBAL STYLES & VARIABLES
+=============================== */
+:root {
+  --primary-color: #f9b03c; /* Main brand color */
+  --primary-dark: #e29d2f; /* Darker shade for hover states */
+  --accent-color: #ffe8c7; /* Light accent */
+  --text-color: #333;
+  --heading-color: #222;
+  --white: #fff;
+  --transition: 0.3s ease;
+  --radius: 8px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+  --hire-dot-color: #ffe7c0; /* for dotted background in hire */
 }
 
-html {
-  scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
   background-color: #fff;
-  color: #333;
-  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* CONTAINER */
-.payg-container {
+/* Container utility */
+.container {
   width: 90%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3em 0;
+  padding: 3rem 0;
 }
 
-/* BUTTONS */
-.payg-btn {
+/* ============================
+         BUTTONS
+=============================== */
+.btn {
   display: inline-block;
-  background-color: #f9b03c; /* Primary brand color */
-  color: #fff;
   padding: 0.75em 2em;
   border-radius: 30px;
   font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
   text-align: center;
+  transition: background-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+  text-decoration: none;
 }
 
-.payg-btn:hover {
-  background-color: #eda12a;
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-.payg-btn-outline {
-  background-color: #fff;
-  color: #f9b03c;
-  border: 2px solid #f9b03c;
+.btn-outline {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   margin-top: 1em;
 }
 
-.payg-btn-outline:hover {
-  background-color: #f9b03c;
-  color: #fff;
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
-/* FADE-IN ANIMATION */
-@keyframes fadeInUpPayg {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ============================
+         hire SECTION
+=============================== */
+.hire {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 4rem 0;
 }
 
-/* HERO SECTION */
-.payg-hero {
-  background: linear-gradient(135deg, #f9b03c, #ffce70);
-  color: #fff;
-  padding: 4em 0;
-  text-align: center;
-  animation: fadeInUpPayg 1s ease forwards;
+/* Dotted pattern on the right side */
+.hire-bg-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--accent-color);
+  background-image: radial-gradient(var(--hire-dot-color) 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-position: 0 0;
+  z-index: 1;
 }
 
-.payg-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5em;
+.hire-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 2;
 }
 
-.payg-hero p {
+.hire-text {
+  flex: 1 1 50%;
+}
+
+.hire-text h1 {
+  font-size: 2.8rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.hire-text p {
   font-size: 1.1rem;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
+  color: #555;
 }
 
-/* BENEFITS SECTION */
-.payg-benefits {
-  animation: fadeInUpPayg 1s ease forwards;
-  animation-delay: 0.2s;
-}
-
-.payg-benefits h2 {
+.hire-image {
+  flex: 1 1 50%;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.payg-benefits-grid {
+.hire-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================
+      BENEFITS SECTION
+=============================== */
+.benefits {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+}
+
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2em;
-  margin-top: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
 }
 
-.payg-benefit-card {
-  background-color: #fff;
-  border: 2px dashed #f9b03c;
-  border-radius: 8px;
-  padding: 2em;
+.benefit-card {
+  background-color: var(--white);
+  border: 1px solid #f2f2f2;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+  text-align: left;
+}
+
+.benefit-card:hover {
+  transform: translateY(-3px);
+}
+
+.benefit-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================
+   HIRE EXPERTS SECTION
+=============================== */
+.hire {
   text-align: center;
-  transition: box-shadow 0.3s ease;
 }
 
-.payg-benefit-card:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+.hire h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
 }
 
-/* HIRE EXPERTS SECTION */
-.payg-hire {
-  animation: fadeInUpPayg 1s ease forwards;
-  animation-delay: 0.4s;
+.hire p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
 }
 
-.payg-hire h2 {
-  text-align: center;
-}
-
-.payg-hire-grid {
+.hire-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2em;
-  margin-top: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
 }
 
-.payg-hire-card {
+.hire-card {
   background-color: #fff;
-  border: 2px solid #f9b03c;
-  border-radius: 8px;
-  padding: 2em;
-  text-align: center;
-  transition: transform 0.3s ease;
+  border: 1px solid #f2f2f2;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+  text-align: left;
 }
 
-.payg-hire-card:hover {
-  transform: translateY(-5px);
+.hire-card:hover {
+  transform: translateY(-3px);
 }
 
-.payg-hire-card ul {
-  list-style: none;
-  margin: 1em 0;
-  padding: 0;
+.hire-card h3 {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
 }
 
-.payg-hire-card li {
-  margin-bottom: 0.5em;
-}
-
-/* HOW OUR PAYG MODEL WORKS */
-.payg-how {
-  animation: fadeInUpPayg 1s ease forwards;
-  animation-delay: 0.6s;
-}
-
-.payg-how h2 {
-  text-align: center;
-}
-
-.payg-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2em;
-  margin-top: 2em;
-}
-
-.payg-step-card {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 2em;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.payg-step-card:hover {
-  transform: translateY(-5px);
-}
-
-.payg-step-card span {
+.price {
   display: inline-block;
-  background-color: #f9b03c;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.25em 0.75em;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hire-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.hire-card li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   HOW IT WORKS SECTION
+=============================== */
+.how {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.how h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  background-color: var(--white);
+  border: 1px solid #f2f2f2;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+  text-align: left;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+}
+
+.step-icon {
   width: 40px;
   height: 40px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
   line-height: 40px;
   border-radius: 50%;
   font-weight: 700;
-  margin-bottom: 1em;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-/* CTA SECTION */
-.payg-cta {
-  background: linear-gradient(135deg, #f9b03c, #ffce70);
+/* ============================
+         CTA SECTION
+=============================== */
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
   color: #fff;
   text-align: center;
-  padding: 3em 1em;
-  animation: fadeInUpPayg 1s ease forwards;
-  animation-delay: 0.8s;
-  border-radius: 8px;
-  margin-bottom: 3em;
+  padding: 4rem 1rem;
+  border-radius: var(--radius);
+  margin-top: 3rem;
 }
 
-.payg-cta h2 {
-  margin-bottom: 0.5em;
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.payg-cta p {
-  margin-bottom: 1.5em;
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
-/* RESPONSIVENESS */
+/* ============================
+        RESPONSIVENESS
+=============================== */
+@media (max-width: 1024px) {
+  .hire-text h1 {
+    font-size: 2.4rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .payg-hero h1 {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .hire-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hire-image {
+    margin-top: 2rem;
+  }
+
+  .benefit-card,
+  .hire-card,
+  .step {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hire-text h1 {
     font-size: 2rem;
   }
-  .payg-hero p {
-    font-size: 1rem;
+
+  .btn {
+    padding: 0.6em 1.5em;
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.85rem;
   }
 }
