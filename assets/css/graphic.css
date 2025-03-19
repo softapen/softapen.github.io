@@ -1,67 +1,4 @@
 /* ============================
-   GLOBAL VARIABLES
-=============================== */
-:root {
-  /* Core Colors */
-  --primary-color: #27408b; /* Darker variant */
-  --primary-dark: #4169e1; /* RoyalBlue */
-  --primary-light: #7aa7f2; /* Lighter variant */
-  --white: #ffffff;
-  --text-color: #333;
-  --heading-color: #222;
-  --font-family: "Inter", sans-serif;
-  --box-icon-color: #27408b;
-
-  /* Graphic Hero Section */
-  --graphic-hero-bg: #e0ecff; /* Light blue background */
-  --graphic-brif-text: var(--primary-color);
-  --graphic-brif-bg: #c1d7f9; /* Soft blue for brief background */
-  --graphic-col-gradient-start: var(--primary-color);
-  --graphic-col-gradient-end: var(--primary-dark);
-  --graphic-text-color: #4b5563;
-  --graphic-btn-bg: var(--primary-color);
-  --graphic-btn-text: var(--white);
-  --graphic-btn-hover-bg: #f9fafb;
-  --graphic-btn-hover-text: var(--primary-color);
-  --graphic-btn-two-bg: #f9fafb;
-  --graphic-btn-two-text: #4b5563;
-  --graphic-btn-two-hover-bg: var(--primary-dark);
-  --graphic-btn-two-hover-text: #f9fafb;
-  --graphic-hero-img-shadow: #0000004b;
-
-  /* Design Services Section */
-  --des-ser-box-gradient: linear-gradient(
-    25deg,
-    var(--primary-color),
-    var(--primary-dark)
-  );
-  --des-ser-box-icon-text: var(--white);
-  --des-ser-box-icon-bg: rgba(65, 105, 225, 0.8);
-  --des-ser-box-text: var(--white);
-
-  /* Portfolio & Grid */
-  --graphic-grid-item-bg: #ddd;
-  --graphic-overlay-bg: rgba(65, 105, 225, 0.7);
-
-  /* Design Process Section */
-  --desProc-bg: #f6fafe;
-
-  /* Box (used in process section) */
-  --box-border: #cbd4e2;
-
-  /* CTA Section Wrapper */
-  --cta-bg: var(--primary-dark);
-  --grap-cta-button-bg: var(--white);
-  --grap-cta-button-text: var(--primary-dark);
-
-  /* Testimonials */
-  --testimonial-box-bg: #f9fafb;
-  --stars-color: #fbbf24;
-  --testimonial-text-color: #111827;
-  --testimonial-author-span: #6b7280;
-}
-
-/* ============================
    GRAPHIC HERO SECTION
 =============================== */
 .grahic-hero {
@@ -72,7 +9,7 @@
   height: 75svh;
   gap: 5rem;
   padding: 5rem 0;
-  background-color: var(--graphic-hero-bg);
+  background-color: var(--light-bg); /* was var(--graphic-hero-bg) */
 }
 
 .graphic-hero-left {
@@ -81,8 +18,8 @@
 }
 
 .graphic-brif {
-  color: var(--graphic-brif-text);
-  background-color: var(--graphic-brif-bg);
+  color: var(--primary-dark); /* was var(--graphic-brif-text) */
+  background-color: var(--light-bg); /* was var(--graphic-brif-bg) */
   width: max-content;
   padding: 6px 16px;
   margin: 0 0 12px;
@@ -103,15 +40,15 @@
 .graphic-col {
   background-image: linear-gradient(
     45deg,
-    var(--graphic-col-gradient-start),
-    var(--graphic-col-gradient-end)
-  );
+    var(--primary-color),
+    var(--primary-light)
+  ); /* was custom gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .graphic-text {
-  color: var(--graphic-text-color);
+  color: var(--text-color); /* was var(--graphic-text-color) */
   width: 90%;
   padding: 0.3rem;
   margin: 0 0 16px;
@@ -134,30 +71,32 @@
 }
 
 .graphic-btn {
-  background: var(--graphic-btn-bg);
-  color: var(--graphic-btn-text);
+  background: var(--primary-color); /* was var(--graphic-btn-bg) */
+  color: var(--white); /* was var(--graphic-btn-text) */
   transition: background 0.5s;
 }
 
 .graphic-btn:hover {
-  color: var(--graphic-btn-hover-text);
-  background: var(--graphic-btn-hover-bg);
+  background: var(--primary-dark); /* was var(--graphic-btn-hover-bg) */
+  color: var(--white); /* was var(--graphic-btn-hover-text) */
 }
 
 .graphic-btn-two {
-  background: var(--graphic-btn-two-bg);
-  color: var(--graphic-btn-two-text);
+  background: var(--primary-light); /* was var(--graphic-btn-two-bg) */
+  color: var(--primary-dark); /* was var(--graphic-btn-two-text) */
   transition: background 0.5s;
 }
 
 .graphic-btn-two:hover {
-  background: var(--graphic-btn-two-hover-bg);
-  color: var(--graphic-btn-two-hover-text);
+  background: var(--primary-dark); /* was var(--graphic-btn-two-hover-bg) */
+  color: var(--white); /* was var(--graphic-btn-two-hover-text) */
 }
 
 .graphic-hero-right > img {
   height: 500px;
-  filter: drop-shadow(0px 0px 12px var(--graphic-hero-img-shadow));
+  filter: drop-shadow(
+    0px 0px 12px var(--primary-dark)
+  ); /* was var(--graphic-hero-img-shadow) */
 }
 
 /* ============================
@@ -184,7 +123,7 @@
 }
 
 .design-ser-text {
-  color: var(--graphic-text-color);
+  color: var(--text-color); /* was var(--graphic-text-color) */
   width: 70%;
   padding: 0.3rem;
   margin: 0 0 32px;
@@ -204,21 +143,25 @@
   margin: 0.5rem;
   padding: 2rem;
   border-radius: 12px;
-  background: var(--des-ser-box-gradient);
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--primary-light)
+  ); /* was var(--des-ser-box-gradient) */
 }
 
 .des-ser-box > i {
   font-size: 22px;
   margin-bottom: 1rem;
-  color: var(--des-ser-box-icon-text);
-  background: var(--des-ser-box-icon-bg);
+  color: var(--primary-dark); /* was var(--des-ser-box-icon-text) */
+  background: var(--light-bg); /* was var(--des-ser-box-icon-bg) */
   padding: 0.6rem;
   border-radius: 6px;
 }
 
 .des-ser-box > h3,
 .des-ser-box > p {
-  color: var(--des-ser-box-text);
+  color: var(--text-color); /* was var(--des-ser-box-text) */
 }
 
 /* ============================
@@ -247,7 +190,7 @@
 }
 
 .porText {
-  color: var(--graphic-text-color);
+  color: var(--text-color); /* was var(--graphic-text-color) */
   width: 70%;
   padding: 0.3rem;
   margin: 0 0 32px;
@@ -274,7 +217,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background: var(--graphic-grid-item-bg);
+  background: var(--white); /* was var(--graphic-grid-item-bg) */
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   height: 250px;
@@ -282,7 +225,7 @@
 
 .graphic-page-grid-item:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 20px var(--graphic-grid-item-shadow, rgba(0, 0, 0, 0.2));
+  box-shadow: var(--shadow); /* using main shadow */
 }
 
 .graphic-page-grid-item img {
@@ -300,7 +243,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--graphic-overlay-bg);
+  background: var(--primary-dark); /* was var(--graphic-overlay-bg) */
   color: var(--white);
   padding: 1rem;
   transform: translateY(100%);
@@ -326,7 +269,7 @@
 =============================== */
 .desProc {
   margin: 3rem auto;
-  background-color: var(--desProc-bg);
+  background-color: var(--bg-grey); /* was var(--desProc-bg) */
   padding: 2rem 0;
 }
 
@@ -347,7 +290,7 @@
 }
 
 .desSubHead {
-  color: var(--graphic-text-color);
+  color: var(--text-color); /* was var(--graphic-text-color) */
   width: 70%;
   padding: 0.3rem;
   margin: 0 0 32px;
@@ -368,7 +311,7 @@
   padding: 1em;
   background: var(--white);
   border-radius: 12px;
-  border: 1px solid var(--box-border);
+  border: 1px solid var(--bg-grey); /* was var(--box-border) */
   text-align: center;
   min-height: 200px;
   max-width: 300px;
@@ -376,8 +319,8 @@
 
 .box > i {
   font-size: 22px;
-  background: var(--box-icon-bg);
-  color: var(--box-icon-color);
+  background: var(--primary-light); /* was var(--box-icon-bg) */
+  color: var(--primary-dark); /* was var(--box-icon-color) */
   padding: 1rem;
   border-radius: 50%;
   margin-bottom: 0.5rem;
@@ -391,7 +334,7 @@
    CTA SECTION WRAPPER
 =============================== */
 .grap-cta-sec {
-  background: var(--cta-bg);
+  background: var(--primary-color); /* was var(--cta-bg) */
   text-align: center;
   padding: 80px 20px;
 }
@@ -418,8 +361,8 @@
 
 .grap-cta-button {
   display: inline-block;
-  background: var(--grap-cta-button-bg);
-  color: var(--grap-cta-button-text);
+  background: var(--primary-dark); /* was var(--grap-cta-button-bg) */
+  color: var(--white); /* was var(--grap-cta-button-text) */
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   text-decoration: none;
@@ -428,8 +371,8 @@
 }
 
 .grap-cta-button:hover {
-  background: #f9e4f5;
-  color: #7a2786;
+  background: var(--light-bg);
+  color: var(--primary-dark);
 }
 
 /* ============================
