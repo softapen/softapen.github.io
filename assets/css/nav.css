@@ -53,7 +53,7 @@ nav ul li a:hover {
 }
 
 .contact {
-  background-color: var(--second-color);
+  background-color: var(--primary-color);
   padding: 10px 15px;
   border: none;
   border-radius: 4px;

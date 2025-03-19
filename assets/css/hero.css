@@ -13,7 +13,7 @@
 
 /* Global Styles */
 * {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-primary);
 }
 
 /* Utility: Container */
@@ -24,12 +24,11 @@
 }
 
 /* ==============================
-   hero SECTION
+   HERO SECTION
 ============================== */
 
 .hero-brif {
   background-color: var(--main-green);
-  /* Use new primary color */
   width: max-content;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
@@ -41,9 +40,8 @@
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #e5f3ff, #f7fbff);
-  /* Updated gradient to blueish tones */
   padding: 4rem 0 6rem 0;
-  height: 70svh;
+  height: min-content;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -146,4 +144,69 @@
   font-weight: 600;
   width: max-content;
   margin-bottom: 1rem;
+}
+
+/* ==============================
+   RESPONSIVE STYLES
+============================== */
+
+/* Ultra-large screens (4K and above) */
+@media screen and (min-width: 2560px) {
+  .container {
+    max-width: 2000px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large to medium screens (tablets and smaller laptops) */
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Smaller devices (landscape tablets & large phones) */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+    height: auto;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-hero-image img {
+    min-height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  /* Scale down background shape */
+  .hero-bg-shape {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+}
+
+/* Extra small devices (phones, ~300px to 480px) */
+@media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .mark-btns,
+  .mark-btns-2 {
+    font-size: 14px;
+    padding: 0.8rem 0.9rem;
+  }
 }
