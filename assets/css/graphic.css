@@ -1,3 +1,7 @@
+* {
+  font-family: var(--font-family);
+}
+
 /* ============================
    GRAPHIC HERO SECTION
 =============================== */
@@ -26,13 +30,12 @@
   border-radius: 12px;
   font-size: 14px;
   font-weight: 700;
-  font-family: sans-serif;
 }
 
 .graphic-hero-head {
   padding: 0.3rem;
   font-size: 48px;
-  font-family: var(--font-family);
+
   font-weight: 700;
   margin: 0 0 12px;
 }
@@ -117,7 +120,7 @@
 .desing-ser-head {
   padding: 0.3rem;
   font-size: 38px;
-  font-family: var(--font-family);
+
   font-weight: 700;
   margin: 0 0 16px;
 }
@@ -183,7 +186,7 @@
 .portHead {
   padding: 0.3rem;
   font-size: 38px;
-  font-family: var(--font-family);
+
   font-weight: 700;
   margin: 0 0 12px;
   text-align: center;
@@ -284,7 +287,7 @@
 .procHead {
   padding: 0.3rem;
   font-size: 38px;
-  font-family: var(--font-family);
+
   font-weight: 700;
   margin: 0 0 16px;
 }

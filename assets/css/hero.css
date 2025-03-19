@@ -2,24 +2,30 @@
    GLOBAL STYLES & VARIABLES
 ============================== */
 :root {
-  --main-green: #4169e1; /* New Primary (RoyalBlue) */
-  --main-green-light: #7aa7f2; /* Lighter variant */
-  --main-bg-light: #f0f8ff; /* Very light blue background */
-  --text-color: #333; /* Unchanged dark text */
-  --heading-color: #222; /* Unchanged heading color */
-  --font-primary: "Inter", sans-serif;
-  --white: #ffffff; /* White */
+  --primary-color: #4169e1; /* New primary color (RoyalBlue) */
+  --primary-dark: #27408b; /* Darker variant */
+  --primary-light: #7aa7f2; /* Lighter variant */
+  --light-bg: #f0f8ff; /* Light blue background */
+  --text-color: #333;
+  --heading-color: #222;
+  --white: #fff;
+  --transition: 0.3s ease;
+  --radius: 8px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+  --bg-grey: #fafafa;
+  --font-family: "Inter", sans-serif;
 }
 
 /* Global Styles */
 * {
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
 }
 
 /* Utility: Container */
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -28,7 +34,7 @@
 ============================== */
 
 .hero-brif {
-  background-color: var(--main-green);
+  background-color: var(--primary-color);
   width: max-content;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
@@ -41,7 +47,6 @@
   position: relative;
   background: linear-gradient(135deg, #e5f3ff, #f7fbff);
   padding: 4rem 0 6rem 0;
-  height: min-content;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -55,7 +60,6 @@
   width: 600px;
   height: 600px;
   background: radial-gradient(circle at center, #a0c4ff 0%, transparent 70%);
-  /* Updated to a blue variant */
   z-index: 1;
   pointer-events: none;
 }
@@ -71,18 +75,17 @@
 
 .hero-text {
   flex: 1 1 500px;
-  margin-right: 2rem;
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   color: var(--heading-color);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555;
   max-width: 500px;
 }
@@ -102,7 +105,6 @@
 
 .mark-high {
   background-image: linear-gradient(25deg, #4169e1, #27408b);
-  /* Gradient from primary to a darker blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -116,8 +118,7 @@
 .mark-btns {
   padding: 0.9rem 1rem;
   border: none;
-  background-color: var(--main-green);
-  /* New primary */
+  background-color: var(--primary-color);
   border-radius: 6px;
   color: var(--white);
   font-weight: 700;
@@ -127,10 +128,9 @@
 .mark-btns-2 {
   padding: 0.9rem 1rem;
   border: none;
-  background-color: var(--main-green-light);
+  background-color: var(--white);
   border-radius: 6px;
-  color: var(--main-green-dark, #27408b);
-  /* Use a darker blue for text */
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: 15px;
 }
@@ -150,36 +150,24 @@
    RESPONSIVE STYLES
 ============================== */
 
-/* Ultra-large screens (4K and above) */
-@media screen and (min-width: 2560px) {
-  .container {
-    max-width: 2000px;
-  }
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-}
+/* Base Mobile-first styles are already in place */
 
-/* Large to medium screens (tablets and smaller laptops) */
-@media screen and (max-width: 1024px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text {
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-}
-
-/* Smaller devices (landscape tablets & large phones) */
-@media screen and (max-width: 768px) {
+/* Extra small devices (360x460, 375x812, 390x844, 414x896) */
+@media screen and (max-width: 480px) {
   .hero-section {
-    padding: 3rem 1rem;
-    height: auto;
+    padding: 1rem;
   }
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .mark-btns,
+  .mark-btns-2 {
+    font-size: 14px;
+    padding: 0.8rem 0.9rem;
   }
   .hero-hero-image img {
     min-height: auto;
@@ -195,18 +183,73 @@
   }
 }
 
-/* Extra small devices (phones, ~300px to 480px) */
-@media screen and (max-width: 480px) {
+/* Small devices / Portrait tablets (e.g., 810x1082) */
+@media screen and (min-width: 481px) and (max-width: 810px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  .hero-text {
+    max-width: 55%;
+  }
   .hero-text h1 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
   .hero-subtitle {
     font-size: 1rem;
-    max-width: 100%;
+    max-width: 80%;
   }
-  .mark-btns,
-  .mark-btns-2 {
-    font-size: 14px;
-    padding: 0.8rem 0.9rem;
+  .hero-btn {
+    margin: 2rem auto;
+  }
+  .hero-hero-image {
+    max-width: 300px;
+  }
+}
+
+/* Medium devices (tablets and smaller laptops) */
+@media screen and (min-width: 811px) and (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-text {
+    margin: 0;
+    max-height: 30rem;
+  }
+  .hero-btn {
+    justify-content: center;
+    margin: 2rem auto;
+  }
+}
+
+/* Larger landscape devices (e.g., 1280x720, 1366x768, 1440x900, 1536x864, 1600x900) */
+@media screen and (min-width: 1025px) and (max-width: 1920px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  .hero-hero-image img {
+    max-width: 100%;
+    min-height: 30rem;
+  }
+}
+
+/* Ultra-large screens (1920x1080 and above) */
+@media screen and (min-width: 1921px) {
+  .container {
+    max-width: 1400px;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Ultra-large screens (4K and above: 2560x1440) */
+@media screen and (min-width: 2560px) {
+  .container {
+    max-width: 2000px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
   }
 }
