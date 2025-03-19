@@ -2,19 +2,20 @@
    GLOBAL STYLES & VARIABLES
 ============================== */
 :root {
-  --main-green: #005eb6;
-  /* Primary Green */
-  --main-green-light: #4ce28a;
-  /* Lighter Accent */
-  --main-bg-light: #f8fff9;
-  /* Very light greenish background */
-  --text-color: #333;
-  --heading-color: #222;
+  --main-green: #4169e1; /* New Primary (RoyalBlue) */
+  --main-green-light: #7aa7f2; /* Lighter variant */
+  --main-bg-light: #f0f8ff; /* Very light blue background */
+  --text-color: #333; /* Unchanged dark text */
+  --heading-color: #222; /* Unchanged heading color */
   --font-primary: "Inter", sans-serif;
+  --white: #ffffff; /* White */
 }
+
+/* Global Styles */
 * {
   font-family: "Inter", sans-serif;
 }
+
 /* Utility: Container */
 .container {
   width: 90%;
@@ -27,17 +28,20 @@
 ============================== */
 
 .marketing-brif {
-  background-color: #00ff00;
+  background-color: var(--main-green);
+  /* Use new primary color */
   width: max-content;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
   font-size: 13px;
-  color: #000;
+  color: var(--white);
   margin-bottom: 0.5rem;
 }
+
 .marketing-section {
   position: relative;
-  background: linear-gradient(135deg, #e5fbe6, #f7fff7);
+  background: linear-gradient(135deg, #e5f3ff, #f7fbff);
+  /* Updated gradient to blueish tones */
   padding: 4rem 0 6rem 0;
   height: 70svh;
   overflow: hidden;
@@ -52,7 +56,8 @@
   right: 0;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle at center, #b5f0c4 0%, transparent 70%);
+  background: radial-gradient(circle at center, #a0c4ff 0%, transparent 70%);
+  /* Updated to a blue variant */
   z-index: 1;
   pointer-events: none;
 }
@@ -98,7 +103,8 @@
 }
 
 .mark-high {
-  background-image: linear-gradient(25deg, #00ff00, #14ac00);
+  background-image: linear-gradient(25deg, #4169e1, #27408b);
+  /* Gradient from primary to a darker blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -112,9 +118,10 @@
 .mark-btns {
   padding: 0.9rem 1rem;
   border: none;
-  background-color: #22c55e;
+  background-color: var(--main-green);
+  /* New primary */
   border-radius: 6px;
-  color: #f0fff2;
+  color: var(--white);
   font-weight: 700;
   font-size: 15px;
 }
@@ -122,17 +129,20 @@
 .mark-btns-2 {
   padding: 0.9rem 1rem;
   border: none;
-  background-color: #abf0c4;
+  background-color: var(--main-green-light);
   border-radius: 6px;
-  color: #203523;
+  color: var(--main-green-dark, #27408b);
+  /* Use a darker blue for text */
   font-weight: 700;
   font-size: 15px;
 }
+
 /* Stats Row */
 .stats-row {
   display: flex;
   justify-content: center;
-  background-color: #fbfffa;
+  background-color: #f0f8ff;
+  /* Updated light blue background */
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 6px 12px #00000018;
@@ -149,6 +159,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--main-green);
+  /* Use new primary color */
   margin-bottom: 0.25rem;
 }
 
@@ -157,8 +168,7 @@
   color: #666;
 }
 
-/* MARKETING markS SECTION */
-
+/* MARKETING marks SECTION */
 .marketing-marks-section {
   margin: 1rem 312px;
   padding: 32px;
@@ -174,7 +184,7 @@
 .marketing-headline {
   padding: 0.3rem;
   font-size: 38px;
-  font-family: var(--font-family);
+  font-family: var(--font-primary);
   font-weight: 700;
   margin: 0 0 16px;
 }
@@ -208,8 +218,9 @@
 .mark-card > i {
   font-size: 22px;
   margin-bottom: 1rem;
-  color: #fef9fe;
-  background: #22c55e;
+  color: var(--white);
+  background: var(--main-green);
+  /* New primary color */
   padding: 0.6rem;
   border-radius: 6px;
 }
@@ -221,6 +232,7 @@
 .mark-card > p {
   color: #999;
 }
+
 /* Global Styles */
 
 /* Client Success Section */
@@ -233,8 +245,10 @@
 
 /* Success Tag */
 .success-tag {
-  background: #d1f7d1;
-  color: #047857;
+  background: #d1e7ff;
+  /* Light blue background */
+  color: #084298;
+  /* Dark blue text */
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
@@ -281,8 +295,9 @@
 }
 
 .stats-icon {
-  background: #e5f6e5;
-  color: #047857;
+  background: #e5f3ff;
+  color: var(--main-green);
+  /* New primary color for icon */
   display: inline-block;
   padding: 15px;
   border-radius: 50%;
@@ -290,7 +305,8 @@
 }
 
 .stats-box h3 {
-  color: #16a34a;
+  color: var(--main-green);
+  /* New primary color */
   font-size: 3rem;
   font-weight: 700;
   margin: 10px 0;
@@ -342,8 +358,9 @@
 }
 
 .author-icon {
-  background: #22c55e;
-  color: white;
+  background: var(--main-green);
+  /* New primary color */
+  color: var(--white);
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
@@ -370,8 +387,9 @@
 
 /* CTA Button */
 .cta-button {
-  background: #16a34a;
-  color: white;
+  background: var(--primary-dark);
+  /* Darker variant for CTA */
+  color: var(--white);
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
@@ -387,15 +405,8 @@
 }
 
 .cta-button:hover {
-  background: #0d8a36;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  background: linear-gradient(35deg, var(--primary-color), var(--primary-dark));
+  transform: translateY(-3px);
 }
 
 /* ==============================
@@ -407,6 +418,7 @@
     var(--main-green),
     var(--main-green-light)
   );
+  /* Using new blue scheme variables */
   color: #fff;
   padding: 4rem 0;
   text-align: center;
@@ -428,6 +440,7 @@
   display: inline-block;
   background-color: #fff;
   color: var(--main-green);
+  /* New primary for text */
   padding: 0.75rem 2rem;
   border-radius: 30px;
   font-weight: 600;
