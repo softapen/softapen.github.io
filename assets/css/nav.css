@@ -1,6 +1,7 @@
 nav {
   display: flex;
   width: 100%;
+  background: linear-gradient(#eaf5ff, #eef7ff);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   flex-wrap: wrap;

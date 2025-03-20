@@ -1,19 +1,19 @@
 /* Footer Base Styles */
 .footer {
-  background-color: #1e293b;
-  color: #ccc;
+  background-color: #f9fafb; /* Updated background color */
+  color: #0f172a; /* Updated font color */
   padding: 4rem 2rem;
   font-family: "Space Grotesk", sans-serif;
 }
 
 .footer a {
-  color: #ccc;
+  color: #0f172a; /* Matches font color */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: #0f172a; /* Keep hover color consistent, or pick a darker shade if you prefer */
 }
 
 /* Grid Container for Columns */
@@ -29,7 +29,7 @@
 .footer-column h3,
 .footer-column h4 {
   margin-bottom: 1rem;
-  color: #fff;
+  color: #0f172a; /* Heading color */
 }
 
 /* About Section Description */
@@ -53,10 +53,10 @@
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
-  border-top: 1px solid #444;
+  border-top: 1px solid #e2e8f0; /* Subtle top border; adjust if you want a darker/lighter line */
   padding-top: 1rem;
   font-size: 0.8rem;
-  color: #888;
+  color: #0f172a;
 }
 
 /* Responsive Adjustments */
