@@ -11,6 +11,7 @@ nav {
   z-index: 999;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 3px solid #2c489c;
 }
 
 nav ul {
