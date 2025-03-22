@@ -13,17 +13,6 @@ nav {
   justify-content: space-between;
 }
 
-nav .logo {
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.logo > img {
-  max-width: 80%;
-  margin-left: 1.5rem;
-}
-
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -150,4 +139,10 @@ input[type="checkbox"] {
 .content div {
   font-size: 40px;
   font-weight: s700;
+}
+
+#logo {
+  height: 2rem;
+  width: 10rem;
+  margin-left: 1rem;
 }
