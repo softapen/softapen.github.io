@@ -1,0 +1,663 @@
+/* Global Styles */
+* {
+  font-family: "Inter", sans-serif;
+}
+
+/* Utility: Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* ==============================
+   marketing SECTION
+============================== */
+
+.marketing-brif {
+  background-color: var(--primary-color);
+  /* Use new primary color */
+  width: max-content;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.marketing-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--light-bg), var(--white));
+  /* Replacing blueish tones with light-bg & white */
+  padding: 4rem 0 6rem 0;
+  height: 70svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketing-bg-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle at center,
+    var(--primary-light) 0%,
+    transparent 70%
+  );
+  /* Updated to use primary-light */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.marketing-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.marketing-text {
+  flex: 1 1 500px;
+  margin-right: 2rem;
+}
+
+.marketing-text h1 {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.marketing-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  /* Replaced #555 */
+  max-width: 500px;
+}
+
+.marketing-markiting {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.marketing-hero-image img {
+  width: 100%;
+  min-height: 30rem;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+
+.mark-high {
+  background-image: linear-gradient(
+    25deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  /* Gradient from primary to its darker variant */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marketing-btn {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mark-btns {
+  padding: 0.9rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  /* New primary */
+  border-radius: 6px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.mark-btns-2 {
+  padding: 0.9rem 1rem;
+  border: none;
+  background-color: var(--primary-light);
+  border-radius: 6px;
+  color: var(--primary-dark);
+  /* Use primary-dark for text */
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.09);
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
+.stat-box {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  /* Use new primary color */
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* MARKETING marks SECTION */
+.marketing-marks-section {
+  margin: 1rem 312px;
+  padding: 32px;
+}
+
+.marketing-marks-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketing-headline {
+  padding: 0.3rem;
+  font-size: 38px;
+  font-family: var(--font-primary);
+  /* Remains as is */
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.marketing-description {
+  color: var(--text-color);
+  /* Replacing #4b5563 */
+  width: 70%;
+  padding: 0.3rem;
+  margin: 0 0 32px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.mark-card-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mark-card {
+  max-width: 550px;
+  margin: 0.5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(25deg, var(--white), var(--bg-grey));
+  /* Gradient from white to bg-grey */
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mark-card > i {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  color: var(--white);
+  background: var(--primary-color);
+  /* New primary color */
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+
+.mark-card > h3 {
+  color: var(--heading-color);
+}
+
+.mark-card > p {
+  color: var(--text-color);
+}
+
+/* Global Styles */
+
+/* Client Success Section */
+.client-success {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Success Tag */
+.success-tag {
+  background: var(--light-bg);
+  /* Mapping light blue to light-bg */
+  color: var(--primary-dark);
+  /* Mapping dark blue to primary-dark */
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+
+/* Heading and Subtext */
+.success-heading {
+  font-size: 28px;
+  color: var(--heading-color);
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.success-subtext {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+/* Stats Boxes */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.stats-box {
+  background: var(--bg-grey);
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stats-icon {
+  background: var(--light-bg);
+  color: var(--primary-color);
+  /* New primary color for icon */
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.stats-box h3 {
+  color: var(--primary-color);
+  /* New primary color */
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.stats-box p {
+  color: var(--text-color);
+  font-size: 14px;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.stats-type {
+  font-size: 13px;
+  color: var(--text-color);
+  display: block;
+  margin-top: 5px;
+}
+
+/* Testimonial Box */
+.testimonial-box {
+  background: var(--bg-grey);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.stars {
+  font-size: 20px;
+  color: var(--primary-light);
+  /* Mapped yellow to primary-light */
+}
+
+.testimonial-text {
+  font-size: 16px;
+  color: var(--heading-color);
+  margin: 15px 0;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.author-icon {
+  background: var(--primary-color);
+  /* New primary color */
+  color: var(--white);
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-author h4 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.testimonial-author span {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* CTA Button */
+.cta-button {
+  background: var(--primary-dark);
+  /* Darker variant for CTA */
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: linear-gradient(35deg, var(--primary-color), var(--primary-dark));
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   CTA SECTION
+============================== */
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
+  /* Using primary-color & primary-light */
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--primary-color);
+  /* New primary for text */
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--bg-grey);
+}
+
+/* ==============================
+   ANIMATIONS & RESPONSIVE
+============================== */
+/* Fade-in classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Intersection Observer fade-in (marketing h1, etc.) */
+.fade-in-up,
+.marketing-subtitle,
+.stats-row {
+  will-change: opacity, transform;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .marketing-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .marketing-text {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .marketing-markiting img {
+    max-width: 300px;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marks-grid,
+  .results-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------------------------
+main responsive 
+-------------------------------------------------------------------------------------------- */
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .marketing-section {
+    height: 50svh;
+  }
+  .marketing-content {
+    flex-direction: column;
+    gap: none;
+  }
+  .marketing-hero-image {
+    display: none;
+  }
+  .success-tag {
+    margin: 1rem auto;
+  }
+
+  .marketing-text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  .marketing-marks-section {
+    margin: 1rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketing-headline {
+    text-align: center;
+  }
+  .marketing-marks-section {
+    padding: 0.5rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .marketing-section {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .marketing-text h1 {
+    font-size: 2rem;
+  }
+
+  .marketing-subtitle {
+    font-size: 1rem;
+  }
+
+  .marketing-btn {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mark-btns,
+  .mark-btns-2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 350px;
+  }
+
+  .mark-card {
+    max-width: 80%;
+    padding: 1.5rem;
+  }
+
+  .testimonial-box {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .marketing-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .marketing-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .marketing-markiting img {
+    max-width: 250px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-box {
+    padding: 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .marketing-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .marketing-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .stats-box {
+    width: 100%;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .mark-card {
+    padding: 1rem;
+  }
+}

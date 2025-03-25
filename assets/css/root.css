@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary-color: #4169e1; /* New primary color (RoyalBlue) */
+  --primary-dark: #27408b; /* Darker variant */
+  --primary-light: #7aa7f2; /* Lighter variant */
+  --light-bg: #f0f8ff; /* Light blue background */
+  --text-color: #333;
+  --heading-color: #222;
+  --white: #fff;
+  --transition: 0.3s ease;
+  --radius: 8px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+  --bg-grey: #fafafa;
+  --font-family: "Inter", sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
